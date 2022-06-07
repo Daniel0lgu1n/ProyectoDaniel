@@ -12,7 +12,7 @@ class HomeController < ApplicationController
         count = count + 1
 
         va1 = lines[rand(100..48633)].gsub("\;\n","")
-        if count <= 5
+        if count <= 4
           array_tmp << va1
         else
           lines2 << array_tmp
