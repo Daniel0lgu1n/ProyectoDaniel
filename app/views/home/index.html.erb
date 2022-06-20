@@ -17,29 +17,5 @@
       </a>
       <% end %>
     </div>
-
-
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
-
-
-  <% @json.each do |va| %>
-      <a href="watch?v=<%= va.split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va.split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
-        <div class="col-sm-3">
-          <div  class="row">
-            <label style="overflow:hidden;white-space: pre;width: 130px;"><%= va.split("\;")[1] %></label>
-          </div>
-          <div class="row">
-            <img src="<%= va.split("\;")[3] %>" width="130px" height="100px" class="img-rounded" alt="<%= va.split("\;")[1] %>">
-          </div>
-          <div class="row">
-            <label>duracion: <%= va.split("\;")[2] %></label>
-          </div>
-        </div>
-      </a>
-  <% end %>
   </div>
-
 </center>

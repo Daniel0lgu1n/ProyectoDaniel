@@ -22,8 +22,12 @@ class HomeController < ApplicationController
     #end
 
     File.open(Rails.root.join('storage', '14081.txt')).each { |line| lines << line }
-    
-    (1..12).each do |va|
+
+    #File.open(Rails.root.join('storage', 'sitemap.txt'), "w+") do |f|
+    #  lines.each { |element| f.puts("http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last) }
+    #end
+
+    (1..15).each do |va|
       va1 = lines[rand(1..14081)].gsub("\;\n","")
       lines2 << va1
     end
