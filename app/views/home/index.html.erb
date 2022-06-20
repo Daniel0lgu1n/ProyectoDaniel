@@ -1,7 +1,31 @@
-<div class="container">
-  <% @json.each do |va1| %>
-    <div class="row">
-      <% va1.each do |va| %>
+<center>
+  <div class="container">
+    <div class="grid grid-cols-1 sm:grid-cols-3">
+      <% @json.each do |va| %>
+      <a href="watch?v=<%= va.split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va.split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
+        <div class="mx-3">
+          <figure class="relative flex flex-col-reverse bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/2">
+            <div class="mx-3">
+              <center>
+                <img src="<%= va.split("\;")[3] %>""/>
+              </center>
+            </div>
+          </figure>
+          <label style="color:#FFFFFF"><%= va.split("\;")[1] %></label>
+          <label>duracion: <%= va.split("\;")[2] %></label>
+        </div>
+      </a>
+      <% end %>
+    </div>
+
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+  <% @json.each do |va| %>
       <a href="watch?v=<%= va.split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va.split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
         <div class="col-sm-3">
           <div  class="row">
@@ -15,18 +39,7 @@
           </div>
         </div>
       </a>
-      <% end %>
-    </div>
   <% end %>
-</div>
+  </div>
 
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-
-
+</center>

@@ -12,6 +12,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "application" %>
   </head>
 
   <body style="background-color:black;">
@@ -37,7 +38,7 @@
     <%= yield %>
   </body>
 
-    <footer class="bg-light text-center text-lg-start">
+  <footer class="bg-light text-center text-lg-start">
     <!-- Grid container -->
     <div class="container p-4">
       <!--Grid row-->
@@ -72,10 +73,3 @@
     <!-- Copyright -->
   </footer>
 </html>
-
-
-<style type="text/css">
-  label {
-    white-space: pre-wrap;
-  }
-</style>
