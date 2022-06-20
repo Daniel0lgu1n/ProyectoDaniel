@@ -36,5 +36,10 @@ class HomeController < ApplicationController
     @info_video_json = ";Videos porno gratis, Free porn, Sex;;;;porn,sex,videos,xvideos,+18,erotic"
   end
 
+  def sitemaps
+    sitemaps = File.read(Rails.root.join('storage', 'sitemap.txt'))
+    render file: Rails.root.join('storage', 'sitemap.txt')
+  end
+
 end
 
