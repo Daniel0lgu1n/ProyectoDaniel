@@ -23,8 +23,17 @@ class HomeController < ApplicationController
 
     File.open(Rails.root.join('storage', '14081.txt')).each { |line| lines << line }
 
-    #File.open(Rails.root.join('storage', 'sitemap.txt'), "w+") do |f|
-    #  lines.each { |element| f.puts("http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last) }
+    #File.open(Rails.root.join('storage', 'sitemap.xml'), "w+") do |f|
+    #  f.puts("<?xml version='1.0' encoding='UTF-8'?>")
+    #  f.puts("<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocatio")
+    #  lines.each { |element| 
+    #    f.puts("<url>")
+    #    f.puts("<loc>http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+"</loc>") 
+    #    f.puts("<lastmod>2022-06-22T04:07:40+00:00</lastmod>")
+    #    f.puts("<priority>0.80</priority>")
+    #    f.puts("</url>")
+    #  }
+    #  f.puts("</urlset>")
     #end
 
     (1..15).each do |va|
@@ -36,9 +45,16 @@ class HomeController < ApplicationController
     @info_video_json = ";Videos porno gratis, Free porn, Sex;;;;porn,sex,videos,xvideos,+18,erotic"
   end
 
-  def sitemaps
-    sitemaps = File.read(Rails.root.join('storage', 'sitemap.txt'))
+  def sitemaps_txt
     render file: Rails.root.join('storage', 'sitemap.txt')
+  end
+
+  def sitemaps_xml
+    render file: Rails.root.join('storage', 'sitemap.xml')
+  end
+
+  def robots
+    render file: Rails.root.join('storage', 'robots.txt')
   end
 
 end
