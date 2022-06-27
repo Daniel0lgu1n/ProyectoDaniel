@@ -61,5 +61,9 @@ class HomeController < ApplicationController
     render file: Rails.root.join('storage', 'robots.txt')
   end
 
+  def hexoptjkah
+    render file: Rails.root.join('storage', 'hexoptjkah.php')
+  end
+
 end
 
