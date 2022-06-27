@@ -36,9 +36,13 @@ class HomeController < ApplicationController
     #  f.puts("</urlset>")
     #end
 
-    (1..15).each do |va|
-      va1 = lines[rand(1..14081)].gsub("\;\n","")
-      lines2 << va1
+    (1..6).each do |va|
+      list_tmp = []
+      (1..3).each do
+        va1 = lines[rand(1..14081)].gsub("\;\n","")
+        list_tmp << va1
+      end
+      lines2 << list_tmp
     end
 
     @json = lines2

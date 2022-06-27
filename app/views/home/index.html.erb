@@ -2,17 +2,45 @@
   <div class="container">
     <div class="grid grid-cols-1 sm:grid-cols-3">
       <% @json.each do |va| %>
-      <a href="watch?v=<%= va.split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va.split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
+      <a href="watch?v=<%= va[0].split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va[0].split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
         <div class="mx-3">
           <figure class="relative flex flex-col-reverse bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/2">
             <div class="mx-3">
               <center>
-                <img src="<%= va.split("\;")[3] %>""/>
+                <img src="<%= va[0].split("\;")[3] %>""/>
               </center>
             </div>
           </figure>
-          <label style="color:#FFFFFF"><%= va.split("\;")[1] %></label>
-          <label>duracion: <%= va.split("\;")[2] %></label>
+          <label style="color:#FFFFFF"><%= va[0].split("\;")[1] %></label>
+          <label>duracion: <%= va[0].split("\;")[2] %></label>
+        </div>
+      </a>
+
+      <a href="watch?v=<%= va[1].split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va[1].split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
+        <div class="mx-3">
+          <figure class="relative flex flex-col-reverse bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/2">
+            <div class="mx-3">
+              <center>
+                <img src="<%= va[1].split("\;")[3] %>""/>
+              </center>
+            </div>
+          </figure>
+          <label style="color:#FFFFFF"><%= va[1].split("\;")[1] %></label>
+          <label>duracion: <%= va[1].split("\;")[2] %></label>
+        </div>
+      </a>
+
+      <a href="watch?v=<%= va[2].split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va[2].split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
+        <div class="mx-3">
+          <figure class="relative flex flex-col-reverse bg-slate-50 rounded-lg p-6 dark:bg-slate-800 dark:highlight-white/2">
+            <div class="mx-3">
+              <center>
+                <img src="<%= va[2].split("\;")[3] %>""/>
+              </center>
+            </div>
+          </figure>
+          <label style="color:#FFFFFF"><%= va[2].split("\;")[1] %></label>
+          <label>duracion: <%= va[2].split("\;")[2] %></label>
         </div>
       </a>
       <% end %>
