@@ -37,21 +37,8 @@ class HomeController < ApplicationController
   end
 
   def sitemaps_xml
-    render file: Rails.root.join("storage", "sitemap.xml")
+    render file: Rails.root.join("storage", "sitemap#{params["index"]}.xml")
   end
-
-  def sitemaps_new_xml
-    render file: Rails.root.join("storage", "sitemap_new.xml")
-  end
-
-  def sitemaps_new_txt
-    render file: Rails.root.join("storage", "sitemap_new.txt")
-  end
-
-  def ssitemap_xml
-    render file: Rails.root.join("storage", "ssitemap.xml")
-  end
-
 
   def robots
     render file: Rails.root.join('storage', 'robots.txt')
