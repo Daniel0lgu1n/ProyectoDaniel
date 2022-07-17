@@ -10,23 +10,12 @@
 
 	<div class="grid grid-cols-1 sm:grid-cols-4">
 		<div class="col-start-1 col-end-4">
-			<div class="relative" style="padding-top: 36.25%">
-			  <iframe class="absolute inset-0 w-full h-full" src="https://www.xvideos.com/embedframe/<%= @codigo %>" frameborder="0"></iframe>
+			<div class="relative" style="padding-top: 54.25%">
+			  <iframe allowfullscreen class="absolute inset-0 w-full h-full" src="https://www.xvideos.com/embedframe/<%= @codigo %>" frameborder="0"></iframe>
 			</div>
 		</div>
 		<div>
-			<div id="ea_7625839_node">&nbsp;</div>
-		    <script type="text/javascript" language="javascript" charset="utf-8">
-		      if (typeof eaCtrl =="undefined"){ 
-		        var eaCtrlRecs=[];
-		        var eaCtrl = {add:function(ag){eaCtrlRecs.push(ag)}};
-		        var js = document.createElement('script');
-		        js.setAttribute("src","//go.eabids.com/loadeactrl.go?pid=131208&spaceid=7625839&ctrlid=788715");
-		        document.head.appendChild(js);
-		      }
 
-		      eaCtrl.add({"display":"ea_7625839_node","sid":7625839,"plugin":"banner","subid":"","maincat":""});
-		    </script>
 		</div>
 	</div>
 
@@ -42,19 +31,48 @@
 			<br>
 		</div>
 		<div>
-		  	<div id="ea_7625839_node">&nbsp;</div>
-		    <script type="text/javascript" language="javascript" charset="utf-8">
-		      if (typeof eaCtrl =="undefined"){ 
-		        var eaCtrlRecs=[];
-		        var eaCtrl = {add:function(ag){eaCtrlRecs.push(ag)}};
-		        var js = document.createElement('script');
-		        js.setAttribute("src","//go.eabids.com/loadeactrl.go?pid=131208&spaceid=7625839&ctrlid=788715");
-		        document.head.appendChild(js);
-		      }
 
-		      eaCtrl.add({"display":"ea_7625839_node","sid":7625839,"plugin":"banner","subid":"","maincat":""});
-		    </script>
 		</div>
+	</div>
+
+	<div class="grid grid-cols-1 sm:grid-cols-3">
+		<% @json.each do |va| %>
+		    <a href="watch?v=<%= va[0].split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va[0].split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
+		      <div class="mx-3">
+		          <div class="mx-3">
+		            <center>
+		              <img src="<%= va[0].split("\;")[3] %>""/>
+		            </center>
+		          </div>
+		        <label><%= va[0].split("\;")[1] %></label>
+		        <label>duracion: <%= va[0].split("\;")[2] %></label>
+		      </div>
+		    </a>
+
+		    <a href="watch?v=<%= va[1].split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va[1].split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
+		      <div class="mx-3">
+		          <div class="mx-3">
+		            <center>
+		              <img src="<%= va[1].split("\;")[3] %>""/>
+		            </center>
+		          </div>
+		        <label><%= va[1].split("\;")[1] %></label>
+		        <label>duracion: <%= va[1].split("\;")[2] %></label>
+		      </div>
+		    </a>
+
+		    <a href="watch?v=<%= va[2].split("\;")[0].split("www.xvideos.com/video").last.split("/").first %>_<%= va[2].split("\;")[0].split("www.xvideos.com/video").last.split("/").last %>">
+		      <div class="mx-3">
+		          <div class="mx-3">
+		            <center>
+		              <img src="<%= va[2].split("\;")[3] %>""/>
+		            </center>
+		          </div>
+		        <label><%= va[2].split("\;")[1] %></label>
+		        <label>duracion: <%= va[2].split("\;")[2] %></label>
+		      </div>
+		    </a>
+		<% end %>
 	</div>
 
 </div>
