@@ -50,11 +50,11 @@ class HomeController < ApplicationController
   end
 
   def sitemaps_txt
-    render file: Rails.root.join('storage', 'sitemap.txt').force_encoding("ISO-8859-1").encode("UTF-8")
+    render file: Rails.root.join('storage', 'sitemap.txt')
   end
 
   def sitemaps_xml
-    render file: Rails.root.join('storage', 'ssitemap.xml').force_encoding("ISO-8859-1").encode("UTF-8")
+    render file: Rails.root.join('storage', 'ssitemap.xml')
   end
 
   def robots
