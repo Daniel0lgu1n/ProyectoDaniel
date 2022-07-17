@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   get '/page-sitemap.xml/' => 'home#sitemaps_xml'
   get '/page-sitemap-new.xml/' => 'home#sitemaps_new_xml'
   get '/page-sitemap-new.txt/' => 'home#sitemaps_new_txt'
-  get '/page-sitemap-new-1000.txt/' => 'home#sitemaps_new_1000_txt'
+  get '/page-ssitemap.xml/' => 'home#ssitemap_xml'
   get '/robots.txt/' => 'home#robots'
 end
