@@ -23,16 +23,41 @@ class HomeController < ApplicationController
 
     File.open(Rails.root.join('storage', '14081.txt')).each { |line| lines << line }
 
-    File.open(Rails.root.join('storage', 'sitemap.xml'), "w+") do |f|
-      f.puts("<urlset>")
-      lines.each { |element| 
-        f.puts("<url>")
-        f.puts("  <loc>http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+"</loc>") 
-        f.puts("  <lastmod>2022-06-22T04:07:40+00:00</lastmod>")
-        f.puts("</url>")
-      }
-      f.puts("</urlset>")
+    count = 0
+    list_agroup_by_1000 = []
+    list_tmp = []
+    lines.each do |element|
+      list_tmp << element
+      count = count + 1
+      if count == 1000
+        list_agroup_by_1000 << list_tmp
+        list_tmp =[]
+        count = 0
+      end
     end
+
+    count = 0
+    list_agroup_by_1000.each do |var|
+      count = count + 1
+      File.open(Rails.root.join("storage", "sitemap#{count}.xml"), "w+") do |f|
+        
+        f.puts("<urlset>")
+        
+          var.each do |element|
+            f.puts("<url>")
+            f.puts("  <loc>http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+"</loc>") 
+            f.puts("  <lastmod>2022-06-22T04:07:40+00:00</lastmod>")
+            f.puts("</url>")
+          end
+          
+
+
+        f.puts("</urlset>")
+
+      end
+    end
+
+    
 
     (1..6).each do |va|
       list_tmp = []
@@ -52,7 +77,7 @@ class HomeController < ApplicationController
   end
 
   def sitemaps_xml
-    render file: Rails.root.join('storage', 'sitemap.xml')
+    render file: Rails.root.join("storage", "sitemap#{params["index"]}.xml")
   end
 
   def robots
