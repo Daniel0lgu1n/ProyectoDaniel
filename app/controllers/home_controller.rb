@@ -7,19 +7,13 @@ class HomeController < ApplicationController
     File.open(Rails.root.join('storage', '14081.txt')).each { |line| lines << line }
 
 
-    # File.open(Rails.root.join("storage", "sitemap_new.xml"), "w+") do |f|
+    # File.open(Rails.root.join("storage", "sitemap_new.txt"), "w+") do |f|
       
-    #   f.puts("<urlset>")
       
     #     lines.each do |element|
-    #       f.puts("<url>")
-    #       f.puts("  <loc>http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+"</loc>") 
-    #       f.puts("  <lastmod>2022-07-17</lastmod>")
-    #       f.puts("  <priority>0.80</priority>")
-    #       f.puts("</url>")
+    #       f.puts("http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+".html/") 
     #     end
         
-    #   f.puts("</urlset>")
 
     # end
 
@@ -48,6 +42,14 @@ class HomeController < ApplicationController
 
   def sitemaps_new_xml
     render file: Rails.root.join("storage", "sitemap_new.xml")
+  end
+
+  def sitemaps_new_txt
+    render file: Rails.root.join("storage", "sitemap_new.txt")
+  end
+
+  def sitemaps_new_1000_txt
+    render file: Rails.root.join("storage", "sitemap_new_1000.txt")
   end
 
   def robots
