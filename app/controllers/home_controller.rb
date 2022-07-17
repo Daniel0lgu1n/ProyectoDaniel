@@ -23,17 +23,10 @@ class HomeController < ApplicationController
 
     File.open(Rails.root.join('storage', '14081.txt')).each { |line| lines << line }
 
-    #File.open(Rails.root.join('storage', 'sitemap.xml'), "w+") do |f|
-    #  f.puts("<?xml version='1.0' encoding='UTF-8'?>")
-    #  f.puts("<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:schemaLocatio")
+    #File.open(Rails.root.join('storage', 'sitemap.txt'), "w+") do |f|
     #  lines.each { |element| 
-    #    f.puts("<url>")
-    #    f.puts("<loc>http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+"</loc>") 
-    #    f.puts("<lastmod>2022-06-22T04:07:40+00:00</lastmod>")
-    #    f.puts("<priority>0.80</priority>")
-    #    f.puts("</url>")
+    #    f.puts("http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+".html") 
     #  }
-    #  f.puts("</urlset>")
     #end
 
     (1..6).each do |va|
@@ -51,10 +44,6 @@ class HomeController < ApplicationController
 
   def sitemaps_txt
     render file: Rails.root.join('storage', 'sitemap.txt')
-  end
-
-  def sitemaps_xml
-    render file: Rails.root.join('storage', 'ssitemap.xml')
   end
 
   def robots
