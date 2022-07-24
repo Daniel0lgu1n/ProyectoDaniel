@@ -75,4 +75,8 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.hosts = nil
+
+  config.sass.inline_source_maps = true
+  config.sass.line_comments = false
+
 end
