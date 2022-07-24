@@ -13,7 +13,7 @@ class WatchController < ApplicationController
       @codigo = params["v"].split("_").first
 
 
-      (1..2).each do |va|
+      (1..1).each do |va|
         list_tmp = []
         (1..3).each do
           va1 = lines[rand(1..14081)].gsub("\;\n","")
