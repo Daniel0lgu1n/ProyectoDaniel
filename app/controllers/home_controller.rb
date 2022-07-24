@@ -4,26 +4,24 @@ class HomeController < ApplicationController
     lines = Array.new
     lines2 = Array.new
 
-    File.open(Rails.root.join('storage', '14081.txt')).each { |line| lines << line }
+    (1..9).each do |va|
+      lines << IO.readlines(Rails.root.join('storage', '14081.txt'))[rand(1..14081)]
+    end
 
-
-    # File.open(Rails.root.join("storage", "sitemap_new.txt"), "w+") do |f|
-      
-      
-    #     lines.each do |element|
-    #       f.puts("http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+".html/") 
-    #     end
-        
-
-    # end
+    ## File.open(Rails.root.join("storage", "sitemap_new.txt"), "w+") do |f|      
+    ##     lines.each do |element|
+    ##       f.puts("http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+".html/") 
+    ##     end
+    ## end
 
     
-
+    count = 0
     (1..3).each do |va|
       list_tmp = []
       (1..3).each do
-        va1 = lines[rand(1..14081)].gsub("\;\n","")
+        va1 = lines[count].gsub("\;\n","")
         list_tmp << va1
+        count = count+1
       end
       lines2 << list_tmp
     end
