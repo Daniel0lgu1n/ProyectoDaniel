@@ -9,7 +9,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true
 
   # Show full error reports.
   config.consider_all_requests_local = true
@@ -78,5 +78,8 @@ Rails.application.configure do
 
   config.sass.inline_source_maps = true
   config.sass.line_comments = false
+
+  config.enable_reloading =  true
+  config.reload_classes_only_on_change =  true
 
 end

@@ -3,6 +3,15 @@ class HomeController < ApplicationController
   def index
     lines = Array.new
     lines2 = Array.new
+    @json = Array.new
+
+    respond_to do |format|
+      format.html
+      format.json
+    end
+
+    @info_video_json = ";Videos porno gratis, Free porn, Sex;;;;porn,sex,videos,xvideos,+18,erotic"
+
 
     (1..9).each do |va|
       lines << IO.readlines(Rails.root.join('storage', '14079.txt'))[rand(1..14079)]
@@ -27,7 +36,13 @@ class HomeController < ApplicationController
     end
 
     @json = lines2
-    @info_video_json = ";Videos porno gratis, Free porn, Sex;;;;porn,sex,videos,xvideos,+18,erotic"
+
+    respond_to do |format|
+      format.html
+      format.json
+    end 
+    
+    
   end
 
   def sitemaps_txt

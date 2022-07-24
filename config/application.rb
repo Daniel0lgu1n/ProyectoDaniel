@@ -9,10 +9,12 @@ Bundler.require(*Rails.groups)
 module ProyectoDaniel
   class Application < Rails::Application
     config.middleware.insert_before(Rack::Sendfile, Rack::Deflater)
+    config.middleware.insert_before(Rack::Sendfile, ActionDispatch::DebugLocks)
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     
-
+    config.add_autoload_paths_to_load_path = false
+    
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

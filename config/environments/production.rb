@@ -120,4 +120,7 @@ Rails.application.configure do
 
   config.sass.inline_source_maps = true
   config.sass.line_comments = false
+
+  config.enable_reloading =  true
+  config.reload_classes_only_on_change =  true
 end
