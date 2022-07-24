@@ -19,7 +19,7 @@ class HomeController < ApplicationController
 
     ## File.open(Rails.root.join("storage", "sitemap_new.txt"), "w+") do |f|      
     ##     lines.each do |element|
-    ##       f.puts("http://videospornogratis.xyz/watch?v="+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+".html/") 
+    ##       f.puts("http://videospornogratis.xyz/watch/"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").first+"_"+element.split("\;")[0].split("www.xvideos.com/video").last.split("/").last+".html/") 
     ##     end
     ## end
 
