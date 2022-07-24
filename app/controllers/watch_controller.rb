@@ -4,7 +4,7 @@ class WatchController < ApplicationController
 
     begin
 
-      File.open(Rails.root.join('storage', '14081.txt')).each do |line|
+      File.open(Rails.root.join('storage', '14079.txt')).each do |line|
         if line.include?(params["v"].split("_").first)
           @info_video_json = line
           @codigo = params["v"].split("_").first
@@ -17,7 +17,7 @@ class WatchController < ApplicationController
       lines2 = Array.new
 
       (1..9).each do |va|
-        lines << IO.readlines(Rails.root.join('storage', '14081.txt'))[rand(1..14081)]
+        lines << IO.readlines(Rails.root.join('storage', '14079.txt'))[rand(1..14079)]
       end
       
 

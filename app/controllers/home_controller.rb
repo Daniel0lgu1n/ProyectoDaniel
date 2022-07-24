@@ -5,7 +5,7 @@ class HomeController < ApplicationController
     lines2 = Array.new
 
     (1..9).each do |va|
-      lines << IO.readlines(Rails.root.join('storage', '14081.txt'))[rand(1..14081)]
+      lines << IO.readlines(Rails.root.join('storage', '14079.txt'))[rand(1..14079)]
     end
 
     ## File.open(Rails.root.join("storage", "sitemap_new.txt"), "w+") do |f|      
