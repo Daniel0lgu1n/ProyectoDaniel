@@ -8,7 +8,7 @@ Bundler.require(*Rails.groups)
 
 module ProyectoDaniel
   class Application < Rails::Application
-    config.middleware.insert_before Rack::Deflater
+    config.middleware.insert_before(Rack::Sendfile, Rack::Deflater)
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
     
