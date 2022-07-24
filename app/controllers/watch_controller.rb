@@ -4,6 +4,16 @@ class WatchController < ApplicationController
 
     begin
 
+      lines = Array.new
+      lines2 = Array.new
+      @json = Array.new
+
+      respond_to do |format|
+        format.html
+        format.json
+      end
+
+
       File.open(Rails.root.join('storage', '14079.txt')).each do |line|
         if line.include?(params["v"].split("_").first)
           @info_video_json = line
@@ -11,10 +21,6 @@ class WatchController < ApplicationController
           break
         end
       end
-
-
-      lines = Array.new
-      lines2 = Array.new
 
       (1..3).each do |va|
         lines << IO.readlines(Rails.root.join('storage', '14079.txt'))[rand(1..14079)]
@@ -34,6 +40,11 @@ class WatchController < ApplicationController
       @json = lines2
 
       raise "error" if @info_video_json.blank?
+
+      respond_to do |format|
+        format.html
+        format.json
+      end
 
     rescue StandardError => e
 
