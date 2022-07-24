@@ -16,7 +16,7 @@ class WatchController < ApplicationController
       lines = Array.new
       lines2 = Array.new
 
-      (1..9).each do |va|
+      (1..3).each do |va|
         lines << IO.readlines(Rails.root.join('storage', '14079.txt'))[rand(1..14079)]
       end
       
