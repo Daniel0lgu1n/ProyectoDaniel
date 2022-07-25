@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get "watch/:v", to: "watch#watch"
-  get "watch/", to: "watch#watch"
   get "/", to: "home#index"
   get '/new_sitemap1.txt/' => 'home#sitemaps_txt'
   get '/new_sitemap1.xml/' => 'home#sitemaps_xml', defaults: { index: "1" }
